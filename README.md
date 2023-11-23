@@ -1,25 +1,28 @@
 ## Overview
 
-A simple demo react app for querying an events API and displaying some events.
+A simple demo react app for querying and displaying events from the ticketmaster API.
 
 ## Features
 
-1. Find events with start date, end date and country. Display in a mobile friendly Material UI grid
-2. Use the context hook to store events in state for the current paginated data
-3. Allow a "load more" button that increments the pagenumber and updates the context
+1. Find events with start date, end date and country location using a lookup on country code.
+2. Display events in a mobile friendly Material UI grid.
+3. A "load more" button that gets the next "page" of data from the API.
 
-Technologies used include typescript, react, vite, vitest & material ui.
+Technologies used include typescript, react, material ui, vite, vitest & material ui.
 
 ## Demo
 
+https://shiny-sawine-26419f.netlify.app/
+
 ## Installation
 
-1. Clone the repo
+1. Clone the github repo
 2. Change into the directory `cd event-finder`
-3. Create an .env file with an API key from https://developer-acct.ticketmaster.com/, replace 123XYZ with your key `echo "VITE_API_KEY='123XYZ'" > .env`
+3. Create an .env file with an API key from https://developer-acct.ticketmaster.com/ `echo "VITE_API_KEY='YOUR_API_KEY'" > .env`
 4. Install the dependencies `npm install`
 5. Run the development server `npm run dev`
 6. Open the browser to the displayed address & port, e.g. http://127.0.0.1:5173/
+7. Run the tests `npm run test`
 
 ## Further improvements
 
@@ -37,16 +40,16 @@ Events don't change much, and this will allow a faster experience and also help 
 
 ### Implement datetime not just date
 
-The default datetime-local option for MUI date pickers were finnicky so I just went with startdate and enddate, this won't be accurate as haven't accounted for user's locale and its setting to midnight UTC.
+The application only uses start and end dates, defaulting to midnight UTC. A better implementation would be to include times and correctly set datetimes based on the user's locale.
 
 ### Error messaging and handling
 
-e.g. if there are no events for a date and location, this is just being sent to console
+Implement user-friendly error messages, especially for scenarios like no events found for a given date and location.
 
 ### Set up complete typing on the event details
 
-As the event object is very large, a full type safety on event details has not been implemented
+As the event object is very large, a full type safety on event details has not been implemented.
 
-## Implement more testing
+### Implement more testing
 
-Mock API responses
+e.g. Mock API responses.
