@@ -118,7 +118,7 @@ const Home = () => {
       <Grid container spacing={6}>
         {state.events.map((eventItem: EventDetails) => (
           <EventCard
-            key={eventItem.id}
+            key={`${eventItem.id}${eventItem.name}`}
             imageUrl={eventItem.images[0].url}
             eventName={eventItem.name}
             eventDate={new Date(
