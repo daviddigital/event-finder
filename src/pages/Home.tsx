@@ -56,7 +56,7 @@ const Home = () => {
 
   const formatDate = (date: Date) => {
     // date must be of format YYYY-MM-DDTHH:mm:ssZ (e.g. 2021-10-01T00:00:00Z)
-    // cuttted off the milliseconds
+    // cut off the milliseconds
     return new Date(date).toISOString().replace(/\.\d{3}Z$/, "Z");
   };
 
@@ -107,6 +107,13 @@ const Home = () => {
         >
           {state.loading ? <CircularProgress /> : "Search"}
         </Button>
+        {state.events.length === 0 && state.currentPage ? (
+          <Container sx={{ display: "flex", justifyContent: "left" }}>
+            <Typography variant="h5" component="h2">
+              No events found
+            </Typography>
+          </Container>
+        ) : null}
       </Box>
       <Grid container spacing={6}>
         {state.events.map((eventItem: EventDetails) => (

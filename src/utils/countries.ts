@@ -6,6 +6,7 @@ type Country = {
 // List of supported country codes from 
 // https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#supported-country-codes 
 // Proably a better way of doing this from a standard library as its ISO 2 letter country codes
+
 const countries: Country[] = [
   { code: 'AD', name: 'Andorra' },
   { code: 'AI', name: 'Anguilla' },
