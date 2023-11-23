@@ -16,7 +16,7 @@ https://shiny-sawine-26419f.netlify.app/
 
 ## Installation
 
-1. Clone the github repo
+1. Clone the github repo `git clone https://github.com/daviddigital/event-finder.git`
 2. Change into the directory `cd event-finder`
 3. Create an .env file with an API key from https://developer-acct.ticketmaster.com/ `echo "VITE_API_KEY='YOUR_API_KEY'" > .env`
 4. Install the dependencies `npm install`
@@ -28,11 +28,11 @@ https://shiny-sawine-26419f.netlify.app/
 
 ### Implement a backend
 
-Rather than quering the third party API directly, at a minimum set up a backend as a proxy so as to not expose API keys.
+Rather than querying the third party API directly, at a minimum set up a backend as a proxy so as to not expose API keys.
 
 As this is a quick demo project with free API keys this was not implemented.
 
-### Implement in memory cache
+#### Implement in memory cache
 
 Rather than fetching events every time from the external API, implement caching of event data at a location and date with a 15 minute expiry. e.g. using redis
 
@@ -44,4 +44,4 @@ The application only uses start and end dates, defaulting to midnight UTC. A bet
 
 ### Implement more testing
 
-e.g. Mock API responses.
+e.g. Mock API responses, date picker, empty states, etc.
