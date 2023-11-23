@@ -78,15 +78,15 @@ const Home = () => {
         <TextField
           label="Start Date"
           type="date"
-          value={startDate.toISOString().substring(0, 10)}
-          onChange={(e) => setStartDate(new Date(e.target.value))}
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
           sx={{ marginRight: 1 }}
         />
         <TextField
           label="End Date"
           type="date"
-          value={endDate.toISOString().substring(0, 10)}
-          onChange={(e) => setEndDate(new Date(e.target.value))}
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
           sx={{ marginRight: 1 }}
         />
         <Select
