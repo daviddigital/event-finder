@@ -42,14 +42,6 @@ Events don't change much, and this will allow a faster experience and also help 
 
 The application only uses start and end dates, defaulting to midnight UTC. A better implementation would be to include times and correctly set datetimes based on the user's locale.
 
-### Error messaging and handling
-
-Implement user-friendly error messages, especially for scenarios like no events found for a given date and location.
-
-### Set up complete typing on the event details
-
-As the event object is very large, a full type safety on event details has not been implemented.
-
 ### Implement more testing
 
 e.g. Mock API responses.
