@@ -8,11 +8,13 @@ A simple demo react app for querying and displaying events from the ticketmaster
 2. Display events in a mobile friendly Material UI grid.
 3. A "load more" button that gets the next "page" of data from the API.
 
-Technologies used include typescript, react, material ui, vite, vitest & material ui.
+Technologies used include typescript, react, material ui, vite, vitest, material ui and deployed via netlify.
 
 ## Demo
 
 https://shiny-sawine-26419f.netlify.app/
+
+Or a short video: https://imgur.com/a/RSh3uGy 
 
 ## Installation
 
