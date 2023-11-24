@@ -43,7 +43,7 @@ const EventCard: React.FC<EventCardProps> = ({
             {eventName}
           </Typography>
           <Typography gutterBottom variant="body2" color="text.secondary">
-            {eventDate}
+            {eventDate ? eventDate : " "}
           </Typography>
           <Button
             component={Link}

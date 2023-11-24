@@ -33,7 +33,7 @@ const Home = () => {
         params: {
           page: state.currentPage,
           startDateTime: formatDate(startDate),
-          endDateTime: formatDate(endDate),
+          endDateTime: formatDate(endDate, true),
           countryCode: location,
         },
       });
@@ -54,10 +54,17 @@ const Home = () => {
     }
   };
 
-  const formatDate = (date: Date) => {
+  const formatDate = (date: Date, addDay: boolean = false) => {
+    const newDate = new Date(date);
+
+    // add a day if if its the endDate as setting to midnight UTC
+    if (addDay) {
+      newDate.setDate(newDate.getDate() + 1);
+    }
+
     // date must be of format YYYY-MM-DDTHH:mm:ssZ (e.g. 2021-10-01T00:00:00Z)
     // cut off the milliseconds
-    return new Date(date).toISOString().replace(/\.\d{3}Z$/, "Z");
+    return newDate.toISOString().replace(/\.\d{3}Z$/, "Z");
   };
 
   const handleSearch = () => {
