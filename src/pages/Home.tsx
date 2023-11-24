@@ -22,8 +22,12 @@ const Home = () => {
     throw new Error("Home must be used within an EventsContext.Provider");
   }
   const { state, dispatch } = context;
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
+  const [endDate, setEndDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
   const [location, setLocation] = useState("");
 
   const fetchEvents = async () => {
@@ -54,7 +58,7 @@ const Home = () => {
     }
   };
 
-  const formatDate = (date: Date, addDay: boolean = false) => {
+  const formatDate = (date: string, addDay: boolean = false) => {
     const newDate = new Date(date);
 
     // add a day if if its the endDate as setting to midnight UTC
