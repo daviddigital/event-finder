@@ -12,9 +12,7 @@ Technologies used include typescript, react, material ui, vite, vitest, material
 
 ## Demo
 
-https://shiny-sawine-26419f.netlify.app/
-
-Or a short video: https://imgur.com/a/RSh3uGy 
+https://imgur.com/a/RSh3uGy 
 
 ## Installation
 
@@ -31,19 +29,3 @@ Or a short video: https://imgur.com/a/RSh3uGy
 ### Implement a backend
 
 Rather than querying the third party API directly, at a minimum set up a backend as a proxy so as to not expose API keys.
-
-As this is a quick demo project with free API keys this was not implemented.
-
-#### Implement in memory cache
-
-Rather than fetching events every time from the external API, implement caching of event data at a location and date with a 15 minute expiry. e.g. using redis
-
-Events don't change much, and this will allow a faster experience and also help with sticking to API usage limits on basic tiers.
-
-### Implement datetime not just date
-
-The application only uses start and end dates, defaulting to midnight UTC. A better implementation would be to include times and correctly set datetimes based on the user's locale.
-
-### Implement more testing
-
-e.g. Mock API responses, date picker, empty states, etc.
